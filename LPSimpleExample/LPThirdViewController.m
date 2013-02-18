@@ -7,7 +7,7 @@
 //
 
 #import "LPThirdViewController.h"
-
+#import "UIView+DisplayWaitingView.h"
 
 @implementation LPThirdViewController
 
@@ -46,6 +46,12 @@
     self.title = NSLocalizedString(@"Third", @"Third");
     self.tabBarItem.image = [UIImage imageNamed:@"second"];
     [super viewDidLoad];
+    [self.view displayWaitingMaskWithText:@"Test"];
+    [super setEditing:NO animated:YES];
+    [self.view hideWaitingMask];
+    [[[UIAlertView alloc] initWithTitle:@"Title" message:@"Message" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

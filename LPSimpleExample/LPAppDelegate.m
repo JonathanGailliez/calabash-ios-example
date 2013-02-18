@@ -8,12 +8,8 @@
 
 #import "LPAppDelegate.h"
 
-#import "LPFirstViewController.h"
-
-#import "LPSecondViewController.h"
-
 #import "LPThirdViewController.h"
-#import "LPFourthViewController.h"
+
 
 @implementation LPAppDelegate
 
@@ -31,15 +27,10 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[[LPFirstViewController alloc] initWithNibName:@"LPFirstViewController" bundle:nil] autorelease];
-    UIViewController *viewController2 = [[[LPSecondViewController alloc] initWithNibName:@"LPSecondViewController" bundle:nil] autorelease];
-    
     UIViewController *viewController3 = [[[LPThirdViewController alloc] initWithNibName:@"LPThirdViewController" bundle:nil] autorelease];
 
-    UIViewController *viewController4 = [[[LPFourthViewController alloc] initWithNibName:@"LPFourthViewController" bundle:nil] autorelease];
-
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2,viewController3,viewController4, nil];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects: viewController3, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
